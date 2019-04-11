@@ -1,0 +1,75 @@
+type Player {
+  id: ID! @id
+  nick: String!
+  shirtNumber: Int!
+  imgUrl: String @default(value: "https://api.adorable.io/avatars/285/abott@adorable.png")
+  team: Team @relation(name: "TeamPlayer")
+  captain: Boolean @default(value: false)
+  personalInfo: PersonalInfo
+  position: PlayerPosition!
+  altPosition: PlayerPosition
+  assessment: Assessment
+  foot: Foot @default(value: UNKNOWN)
+  from: WhereFrom
+  injured: Boolean @default(value: false)
+  injury: [Injury] @relation(link: INLINE, name: "Injuries")
+  sizes: Size
+  goals: [Goal] @relation(link: INLINE, name: "PlayerGoal")
+  assist: [Assist] @relation(link: INLINE, name: "PlayerAssist")
+  bookings: [Booking] @relation(link: INLINE, name: "PlayerBooking")
+  lineup: [Match] @relation(name: "Lineup")
+  bench: [Match] @relation(name: "Bench")
+}
+
+type PersonalInfo @embedded {
+  id: ID! @id
+  name: String!
+  firstName: String!
+  lastName: String
+  dateOfBirth: DateTime
+  tel: Int
+  email: String
+  dni: String! 
+  origin: String
+  status: String
+  childs: Int
+  brothers: Int
+  poscBrothers: Int
+  clubBrothers: Int
+}
+
+type WhereFrom @embedded {
+  id: ID! @id
+  address: String
+  number: Int
+  town: String
+  province: String
+  countruy: String
+  PC: Int
+  placeOfBirth: String
+  nationality: String
+  extra: Boolean
+}
+
+type Assessment @embedded {
+  id: ID! @id
+  personality: Float
+  psychology: Float
+  technical: Float
+  tactical: Float
+  physical: Float
+}
+
+type Size @embedded {
+  id: ID! @id
+  clothing: String
+  step: Int
+}
+
+type Injury {
+  id: ID! @id
+  startAt: DateTime!
+  endAt: DateTime
+  desc: String!
+  player: Player @relation(name: "Injuries")
+}

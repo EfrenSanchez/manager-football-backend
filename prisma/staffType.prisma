@@ -1,0 +1,35 @@
+type Staff {
+  id: ID! @id
+  nick: String!
+  imgUrl: String
+  team: Team @relation(name: "TeamStaff")
+  personalInfo: StaffInfo
+  from: StaffFrom
+  sizes: StaffSize
+  role: String
+  matches: [Match] @relation(name: "MatchStaff")
+}
+
+type StaffInfo @embedded {
+  name: String!
+  firstName: String!
+  lastName: String
+  dateOfBirth: DateTime
+  tel: Int
+  email: String
+  dni: String!
+}
+
+type StaffFrom @embedded {
+  address: String
+  number: Int
+  town: String
+  province: String
+  countruy: String
+  PC: Int
+}
+
+type StaffSize @embedded {
+  clothing: String
+  step: Int
+}

@@ -1,0 +1,7 @@
+type Team {
+  id: ID! @id
+  logoUrl: String
+  name: String! @unique
+  players: [Player] @relation(link: INLINE, name: "TeamPlayer")
+  staff: [Staff] @relation(link: INLINE, name: "TeamStaff")
+}

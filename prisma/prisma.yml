@@ -1,0 +1,22 @@
+endpoint: http://localhost:4466
+
+datamodel:
+  - playerType.prisma
+  - matchType.prisma
+  - teamType.prisma
+  - staffType.prisma
+  - enums.prisma
+
+databaseType: document
+
+generate:
+  - generator: javascript-client
+    output: ../src/generated/prisma-client/
+
+hooks:
+  post-deploy:
+    - echo "Deployment finished"
+    - prisma generate
+    - npx nexus-prisma-generate 
+      --client ./src/generated/prisma-client
+      --output ./src/generated/nexus-prisma

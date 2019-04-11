@@ -1,0 +1,43 @@
+{
+  "name": "manager-football-backend",
+  "version": "1.0.0",
+  "description": "server graphql",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "cross-env node src/index.js",
+    "server": "ts-node-dev --no-notify --respawn --transpileOnly ./src",
+    "prisma": "prisma deploy --env-file .env",
+    "prisma-reset": "prisma reset",
+    "playground": "graphql playground"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EfrenSanchez/manager-football-backend.git"
+  },
+  "keywords": [
+    "graphql",
+    "graphql-yoga",
+    "prisma",
+    "nexus"
+  ],
+  "author": "Efren Sanchez <efren.sanchezgon@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EfrenSanchez/manager-football-backend/issues"
+  },
+  "homepage": "https://github.com/EfrenSanchez/manager-football-backend#readme",
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "dotenv": "^7.0.0",
+    "graphql": "^14.2.1",
+    "graphql-yoga": "^1.17.4",
+    "nexus": "^0.11.6",
+    "nexus-prisma": "^0.3.5",
+    "prisma-client-lib": "^1.30.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11",
+    "ts-node-dev": "^1.0.0-pre.32",
+    "typescript": "^3.4.3"
+  }
+}

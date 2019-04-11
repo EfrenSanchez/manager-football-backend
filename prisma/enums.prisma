@@ -1,0 +1,33 @@
+enum PlayerPosition {
+  GOALKEEPER,
+  CENTRE_BACK, 
+  LEFT_BACK, 
+  RIGHT_BACK,
+  DEFENSIVE_MIDFIELD,
+  CENTRE_MIDFIELD,
+  LEFT_MIDFIELD,
+  RIGHT_MIDFIELD,
+  ATTACKING_MIDFIELD,
+  LEFT_WINGER,
+  RIGHT_WINGER,
+  SECOND_STRIKE,
+  CENTRE_FORWARD
+}
+
+enum Foot {
+  LEFT,
+  RIGHT,
+  AMB,
+  UNKNOWN
+}
+
+enum ColorCard {
+  YELLOW,
+  RED
+}
+
+enum Competiton {
+  FRIENDLY,
+  LEAGUE,
+  CUP
+}

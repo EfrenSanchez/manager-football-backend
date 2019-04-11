@@ -1,0 +1,64 @@
+type Match {
+  id: ID! @id
+  date: DateTime
+  jornada: Int! @unique
+  finished: Boolean @default(value: false)
+  homeTeam: Boolean
+  opponent: Team @relation(link: INLINE)
+  win: Boolean
+  competition: Competiton
+  captain: Player! @relation(link: INLINE, name: "MatchCaptain")
+  staff: [Staff] @relation(link: INLINE, name: "MatchStaff")
+  lineup: [Player] @relation(link: INLINE, name: "Lineup")
+  bench: [Player] @relation(link: INLINE, name: "Bench")
+  score: Score!
+  goals: [Goal] @relation(link: INLINE, name: "MatchGoal")
+  assist: [Assist] @relation(link: INLINE, name: "MatchAssist")
+  substitutions: [Substitutions]
+  bookings: [Booking] @relation(link: INLINE, name: "MatchBooking")
+  referees: String
+  desc: String
+}
+
+type Score @embedded {
+  fullTime: HomeAndAway! @relation(name: "FullTime")
+  halfTime: HomeAndAway @relation(name: "HalfTiem")
+  extraTime: HomeAndAway @relation(name: "ExtraTime")
+  penalties: HomeAndAway @relation(name: "Penalties")
+}
+
+type HomeAndAway @embedded {
+  homeTeam: Int
+  awayTeam: Int
+}
+
+type Substitutions @embedded {
+  playerIn: Player! @relation(name: "PlayerIn")
+  playerOut: Player! @relation(name: "PlayerOut")
+  min: Float
+}
+
+type Goal {
+  id: ID! @id
+  player: Player! @relation(name: "PlayerGoal")
+  match: Match! @relation(name: "MatchGoal")
+  min: Float
+  desc: String
+}
+
+type Assist {
+  id: ID! @id
+  player: Player! @relation(name: "PlayerAssist")
+  match: Match! @relation(name: "MatchAssist")
+  min: Float
+  desc: String
+}
+
+type Booking {
+  id: ID! @id
+  player: Player! @relation(name: "PlayerBooking")
+  match: Match! @relation(name: "MatchBooking")
+  min: Float
+  desc: String
+  card: ColorCard
+}
