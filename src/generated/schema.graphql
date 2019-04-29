@@ -44,6 +44,7 @@ type Assessment {
 }
 
 input AssessmentCreateInput {
+  id: ID
   personality: Float
   physical: Float
   psychology: Float
@@ -155,6 +156,7 @@ type AssistConnection {
 
 input AssistCreateInput {
   desc: String
+  id: ID
   match: MatchCreateOneWithoutAssistInput!
   min: Float
   player: PlayerCreateOneWithoutAssistInput!
@@ -172,12 +174,14 @@ input AssistCreateManyWithoutPlayerInput {
 
 input AssistCreateWithoutMatchInput {
   desc: String
+  id: ID
   min: Float
   player: PlayerCreateOneWithoutAssistInput!
 }
 
 input AssistCreateWithoutPlayerInput {
   desc: String
+  id: ID
   match: MatchCreateOneWithoutAssistInput!
   min: Float
 }
@@ -386,6 +390,7 @@ type BookingConnection {
 input BookingCreateInput {
   card: ColorCard
   desc: String
+  id: ID
   match: MatchCreateOneWithoutBookingsInput!
   min: Float
   player: PlayerCreateOneWithoutBookingsInput!
@@ -404,6 +409,7 @@ input BookingCreateManyWithoutPlayerInput {
 input BookingCreateWithoutMatchInput {
   card: ColorCard
   desc: String
+  id: ID
   min: Float
   player: PlayerCreateOneWithoutBookingsInput!
 }
@@ -411,6 +417,7 @@ input BookingCreateWithoutMatchInput {
 input BookingCreateWithoutPlayerInput {
   card: ColorCard
   desc: String
+  id: ID
   match: MatchCreateOneWithoutBookingsInput!
   min: Float
 }
@@ -648,6 +655,7 @@ type GoalConnection {
 
 input GoalCreateInput {
   desc: String
+  id: ID
   match: MatchCreateOneWithoutGoalsInput!
   min: Float
   player: PlayerCreateOneWithoutGoalsInput!
@@ -665,12 +673,14 @@ input GoalCreateManyWithoutPlayerInput {
 
 input GoalCreateWithoutMatchInput {
   desc: String
+  id: ID
   min: Float
   player: PlayerCreateOneWithoutGoalsInput!
 }
 
 input GoalCreateWithoutPlayerInput {
   desc: String
+  id: ID
   match: MatchCreateOneWithoutGoalsInput!
   min: Float
 }
@@ -932,6 +942,7 @@ type InjuryConnection {
 input InjuryCreateInput {
   desc: String!
   endAt: DateTime
+  id: ID
   player: PlayerCreateOneWithoutInjuryInput
   startAt: DateTime!
 }
@@ -944,6 +955,7 @@ input InjuryCreateManyWithoutPlayerInput {
 input InjuryCreateWithoutPlayerInput {
   desc: String!
   endAt: DateTime
+  id: ID
   startAt: DateTime!
 }
 
@@ -1160,6 +1172,7 @@ input MatchCreateInput {
   finished: Boolean
   goals: GoalCreateManyWithoutMatchInput
   homeTeam: Boolean
+  id: ID
   jornada: Int!
   lineup: PlayerCreateManyWithoutLineupInput
   opponent: TeamCreateOneInput
@@ -1210,6 +1223,7 @@ input MatchCreateWithoutAssistInput {
   finished: Boolean
   goals: GoalCreateManyWithoutMatchInput
   homeTeam: Boolean
+  id: ID
   jornada: Int!
   lineup: PlayerCreateManyWithoutLineupInput
   opponent: TeamCreateOneInput
@@ -1230,6 +1244,7 @@ input MatchCreateWithoutBenchInput {
   finished: Boolean
   goals: GoalCreateManyWithoutMatchInput
   homeTeam: Boolean
+  id: ID
   jornada: Int!
   lineup: PlayerCreateManyWithoutLineupInput
   opponent: TeamCreateOneInput
@@ -1250,6 +1265,7 @@ input MatchCreateWithoutBookingsInput {
   finished: Boolean
   goals: GoalCreateManyWithoutMatchInput
   homeTeam: Boolean
+  id: ID
   jornada: Int!
   lineup: PlayerCreateManyWithoutLineupInput
   opponent: TeamCreateOneInput
@@ -1270,6 +1286,7 @@ input MatchCreateWithoutGoalsInput {
   desc: String
   finished: Boolean
   homeTeam: Boolean
+  id: ID
   jornada: Int!
   lineup: PlayerCreateManyWithoutLineupInput
   opponent: TeamCreateOneInput
@@ -1291,6 +1308,7 @@ input MatchCreateWithoutLineupInput {
   finished: Boolean
   goals: GoalCreateManyWithoutMatchInput
   homeTeam: Boolean
+  id: ID
   jornada: Int!
   opponent: TeamCreateOneInput
   referees: String
@@ -1311,6 +1329,7 @@ input MatchCreateWithoutStaffInput {
   finished: Boolean
   goals: GoalCreateManyWithoutMatchInput
   homeTeam: Boolean
+  id: ID
   jornada: Int!
   lineup: PlayerCreateManyWithoutLineupInput
   opponent: TeamCreateOneInput
@@ -1865,6 +1884,7 @@ input PersonalInfoCreateInput {
   dni: String!
   email: String
   firstName: String!
+  id: ID
   lastName: String
   name: String!
   origin: String
@@ -2114,6 +2134,7 @@ input PlayerCreateInput {
   foot: Foot
   from: WhereFromCreateOneInput
   goals: GoalCreateManyWithoutPlayerInput
+  id: ID
   imgUrl: String
   injured: Boolean
   injury: InjuryCreateManyWithoutPlayerInput
@@ -2175,6 +2196,7 @@ input PlayerCreateWithoutAssistInput {
   foot: Foot
   from: WhereFromCreateOneInput
   goals: GoalCreateManyWithoutPlayerInput
+  id: ID
   imgUrl: String
   injured: Boolean
   injury: InjuryCreateManyWithoutPlayerInput
@@ -2196,6 +2218,7 @@ input PlayerCreateWithoutBenchInput {
   foot: Foot
   from: WhereFromCreateOneInput
   goals: GoalCreateManyWithoutPlayerInput
+  id: ID
   imgUrl: String
   injured: Boolean
   injury: InjuryCreateManyWithoutPlayerInput
@@ -2217,6 +2240,7 @@ input PlayerCreateWithoutBookingsInput {
   foot: Foot
   from: WhereFromCreateOneInput
   goals: GoalCreateManyWithoutPlayerInput
+  id: ID
   imgUrl: String
   injured: Boolean
   injury: InjuryCreateManyWithoutPlayerInput
@@ -2238,6 +2262,7 @@ input PlayerCreateWithoutGoalsInput {
   captain: Boolean
   foot: Foot
   from: WhereFromCreateOneInput
+  id: ID
   imgUrl: String
   injured: Boolean
   injury: InjuryCreateManyWithoutPlayerInput
@@ -2260,6 +2285,7 @@ input PlayerCreateWithoutInjuryInput {
   foot: Foot
   from: WhereFromCreateOneInput
   goals: GoalCreateManyWithoutPlayerInput
+  id: ID
   imgUrl: String
   injured: Boolean
   lineup: MatchCreateManyWithoutLineupInput
@@ -2281,6 +2307,7 @@ input PlayerCreateWithoutLineupInput {
   foot: Foot
   from: WhereFromCreateOneInput
   goals: GoalCreateManyWithoutPlayerInput
+  id: ID
   imgUrl: String
   injured: Boolean
   injury: InjuryCreateManyWithoutPlayerInput
@@ -2302,6 +2329,7 @@ input PlayerCreateWithoutTeamInput {
   foot: Foot
   from: WhereFromCreateOneInput
   goals: GoalCreateManyWithoutPlayerInput
+  id: ID
   imgUrl: String
   injured: Boolean
   injury: InjuryCreateManyWithoutPlayerInput
@@ -2892,6 +2920,7 @@ type Score {
   extraTime: HomeAndAway
   fullTime: HomeAndAway!
   halfTime: HomeAndAway
+  id: ID!
   penalties: HomeAndAway
 }
 
@@ -2899,6 +2928,7 @@ input ScoreCreateInput {
   extraTime: HomeAndAwayCreateOneInput
   fullTime: HomeAndAwayCreateOneInput!
   halfTime: HomeAndAwayCreateOneInput
+  id: ID
   penalties: HomeAndAwayCreateOneInput
 }
 
@@ -2914,6 +2944,7 @@ input ScoreUpdateDataInput {
 }
 
 input ScoreUpdateOneRequiredInput {
+  connect: ScoreWhereUniqueInput
   create: ScoreCreateInput
   update: ScoreUpdateDataInput
   upsert: ScoreUpsertNestedInput
@@ -2929,7 +2960,25 @@ input ScoreWhereInput {
   extraTime: HomeAndAwayWhereInput
   fullTime: HomeAndAwayWhereInput
   halfTime: HomeAndAwayWhereInput
+  id: ID
+  id_contains: ID
+  id_ends_with: ID
+  id_gt: ID
+  id_gte: ID
+  id_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_not: ID
+  id_not_contains: ID
+  id_not_ends_with: ID
+  id_not_in: [ID!]
+  id_not_starts_with: ID
+  id_starts_with: ID
   penalties: HomeAndAwayWhereInput
+}
+
+input ScoreWhereUniqueInput {
+  id: ID
 }
 
 type Size {
@@ -2940,6 +2989,7 @@ type Size {
 
 input SizeCreateInput {
   clothing: String
+  id: ID
   step: Int
 }
 
@@ -3030,6 +3080,7 @@ type StaffConnection {
 
 input StaffCreateInput {
   from: StaffFromCreateOneInput
+  id: ID
   imgUrl: String
   matches: MatchCreateManyWithoutStaffInput
   nick: String!
@@ -3051,6 +3102,7 @@ input StaffCreateManyWithoutTeamInput {
 
 input StaffCreateWithoutMatchesInput {
   from: StaffFromCreateOneInput
+  id: ID
   imgUrl: String
   nick: String!
   personalInfo: StaffInfoCreateOneInput
@@ -3061,6 +3113,7 @@ input StaffCreateWithoutMatchesInput {
 
 input StaffCreateWithoutTeamInput {
   from: StaffFromCreateOneInput
+  id: ID
   imgUrl: String
   matches: MatchCreateManyWithoutStaffInput
   nick: String!
@@ -3626,12 +3679,14 @@ input StaffWhereUniqueInput {
 }
 
 type Substitutions {
+  id: ID!
   min: Float
   playerIn: Player!
   playerOut: Player!
 }
 
 input SubstitutionsCreateInput {
+  id: ID
   min: Float
   playerIn: PlayerCreateOneInput!
   playerOut: PlayerCreateOneInput!
@@ -3643,6 +3698,20 @@ input SubstitutionsCreateManyInput {
 
 input SubstitutionsRestrictedWhereInput {
   AND: [SubstitutionsRestrictedWhereInput!]
+  id: ID
+  id_contains: ID
+  id_ends_with: ID
+  id_gt: ID
+  id_gte: ID
+  id_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_not: ID
+  id_not_contains: ID
+  id_not_ends_with: ID
+  id_not_in: [ID!]
+  id_not_starts_with: ID
+  id_starts_with: ID
   min: Float
   min_gt: Float
   min_gte: Float
@@ -3655,6 +3724,20 @@ input SubstitutionsRestrictedWhereInput {
 
 input SubstitutionsScalarWhereInput {
   AND: [SubstitutionsScalarWhereInput!]
+  id: ID
+  id_contains: ID
+  id_ends_with: ID
+  id_gt: ID
+  id_gte: ID
+  id_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_not: ID
+  id_not_contains: ID
+  id_not_ends_with: ID
+  id_not_in: [ID!]
+  id_not_starts_with: ID
+  id_starts_with: ID
   min: Float
   min_gt: Float
   min_gte: Float
@@ -3667,14 +3750,23 @@ input SubstitutionsScalarWhereInput {
   OR: [SubstitutionsScalarWhereInput!]
 }
 
+input SubstitutionsUpdateDataInput {
+  min: Float
+  playerIn: PlayerUpdateOneRequiredInput
+  playerOut: PlayerUpdateOneRequiredInput
+}
+
 input SubstitutionsUpdateManyDataInput {
   min: Float
 }
 
 input SubstitutionsUpdateManyInput {
   create: [SubstitutionsCreateInput!]
+  delete: [SubstitutionsWhereUniqueInput!]
   deleteMany: [SubstitutionsScalarWhereInput!]
+  update: [SubstitutionsUpdateWithWhereUniqueNestedInput!]
   updateMany: [SubstitutionsUpdateManyWithWhereNestedInput!]
+  upsert: [SubstitutionsUpsertWithWhereUniqueNestedInput!]
 }
 
 input SubstitutionsUpdateManyWithWhereNestedInput {
@@ -3682,8 +3774,33 @@ input SubstitutionsUpdateManyWithWhereNestedInput {
   where: SubstitutionsScalarWhereInput!
 }
 
+input SubstitutionsUpdateWithWhereUniqueNestedInput {
+  data: SubstitutionsUpdateDataInput!
+  where: SubstitutionsWhereUniqueInput!
+}
+
+input SubstitutionsUpsertWithWhereUniqueNestedInput {
+  create: SubstitutionsCreateInput!
+  update: SubstitutionsUpdateDataInput!
+  where: SubstitutionsWhereUniqueInput!
+}
+
 input SubstitutionsWhereInput {
   AND: [SubstitutionsWhereInput!]
+  id: ID
+  id_contains: ID
+  id_ends_with: ID
+  id_gt: ID
+  id_gte: ID
+  id_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_not: ID
+  id_not_contains: ID
+  id_not_ends_with: ID
+  id_not_in: [ID!]
+  id_not_starts_with: ID
+  id_starts_with: ID
   min: Float
   min_gt: Float
   min_gte: Float
@@ -3694,6 +3811,10 @@ input SubstitutionsWhereInput {
   min_not_in: [Float!]
   playerIn: PlayerWhereInput
   playerOut: PlayerWhereInput
+}
+
+input SubstitutionsWhereUniqueInput {
+  id: ID
 }
 
 type Team {
@@ -3711,6 +3832,7 @@ type TeamConnection {
 }
 
 input TeamCreateInput {
+  id: ID
   logoUrl: String
   name: String!
   players: PlayerCreateManyWithoutTeamInput
@@ -3733,12 +3855,14 @@ input TeamCreateOneWithoutStaffInput {
 }
 
 input TeamCreateWithoutPlayersInput {
+  id: ID
   logoUrl: String
   name: String!
   staff: StaffCreateManyWithoutTeamInput
 }
 
 input TeamCreateWithoutStaffInput {
+  id: ID
   logoUrl: String
   name: String!
   players: PlayerCreateManyWithoutTeamInput
@@ -3901,6 +4025,7 @@ input WhereFromCreateInput {
   address: String
   countruy: String
   extra: Boolean
+  id: ID
   nationality: String
   number: Int
   PC: Int

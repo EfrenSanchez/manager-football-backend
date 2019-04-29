@@ -12,6 +12,7 @@ declare global {
 
 export interface NexusGenInputs {
   AssessmentCreateInput: { // input type
+    id?: string | null; // ID
     personality?: number | null; // Float
     physical?: number | null; // Float
     psychology?: number | null; // Float
@@ -102,6 +103,7 @@ export interface NexusGenInputs {
   }
   AssistCreateInput: { // input type
     desc?: string | null; // String
+    id?: string | null; // ID
     match: NexusGenInputs['MatchCreateOneWithoutAssistInput']; // MatchCreateOneWithoutAssistInput!
     min?: number | null; // Float
     player: NexusGenInputs['PlayerCreateOneWithoutAssistInput']; // PlayerCreateOneWithoutAssistInput!
@@ -116,11 +118,13 @@ export interface NexusGenInputs {
   }
   AssistCreateWithoutMatchInput: { // input type
     desc?: string | null; // String
+    id?: string | null; // ID
     min?: number | null; // Float
     player: NexusGenInputs['PlayerCreateOneWithoutAssistInput']; // PlayerCreateOneWithoutAssistInput!
   }
   AssistCreateWithoutPlayerInput: { // input type
     desc?: string | null; // String
+    id?: string | null; // ID
     match: NexusGenInputs['MatchCreateOneWithoutAssistInput']; // MatchCreateOneWithoutAssistInput!
     min?: number | null; // Float
   }
@@ -280,6 +284,7 @@ export interface NexusGenInputs {
   BookingCreateInput: { // input type
     card?: NexusGenEnums['ColorCard'] | null; // ColorCard
     desc?: string | null; // String
+    id?: string | null; // ID
     match: NexusGenInputs['MatchCreateOneWithoutBookingsInput']; // MatchCreateOneWithoutBookingsInput!
     min?: number | null; // Float
     player: NexusGenInputs['PlayerCreateOneWithoutBookingsInput']; // PlayerCreateOneWithoutBookingsInput!
@@ -295,12 +300,14 @@ export interface NexusGenInputs {
   BookingCreateWithoutMatchInput: { // input type
     card?: NexusGenEnums['ColorCard'] | null; // ColorCard
     desc?: string | null; // String
+    id?: string | null; // ID
     min?: number | null; // Float
     player: NexusGenInputs['PlayerCreateOneWithoutBookingsInput']; // PlayerCreateOneWithoutBookingsInput!
   }
   BookingCreateWithoutPlayerInput: { // input type
     card?: NexusGenEnums['ColorCard'] | null; // ColorCard
     desc?: string | null; // String
+    id?: string | null; // ID
     match: NexusGenInputs['MatchCreateOneWithoutBookingsInput']; // MatchCreateOneWithoutBookingsInput!
     min?: number | null; // Float
   }
@@ -472,6 +479,7 @@ export interface NexusGenInputs {
   }
   GoalCreateInput: { // input type
     desc?: string | null; // String
+    id?: string | null; // ID
     match: NexusGenInputs['MatchCreateOneWithoutGoalsInput']; // MatchCreateOneWithoutGoalsInput!
     min?: number | null; // Float
     player: NexusGenInputs['PlayerCreateOneWithoutGoalsInput']; // PlayerCreateOneWithoutGoalsInput!
@@ -486,11 +494,13 @@ export interface NexusGenInputs {
   }
   GoalCreateWithoutMatchInput: { // input type
     desc?: string | null; // String
+    id?: string | null; // ID
     min?: number | null; // Float
     player: NexusGenInputs['PlayerCreateOneWithoutGoalsInput']; // PlayerCreateOneWithoutGoalsInput!
   }
   GoalCreateWithoutPlayerInput: { // input type
     desc?: string | null; // String
+    id?: string | null; // ID
     match: NexusGenInputs['MatchCreateOneWithoutGoalsInput']; // MatchCreateOneWithoutGoalsInput!
     min?: number | null; // Float
   }
@@ -696,6 +706,7 @@ export interface NexusGenInputs {
   InjuryCreateInput: { // input type
     desc: string; // String!
     endAt?: any | null; // DateTime
+    id?: string | null; // ID
     player?: NexusGenInputs['PlayerCreateOneWithoutInjuryInput'] | null; // PlayerCreateOneWithoutInjuryInput
     startAt: any; // DateTime!
   }
@@ -706,6 +717,7 @@ export interface NexusGenInputs {
   InjuryCreateWithoutPlayerInput: { // input type
     desc: string; // String!
     endAt?: any | null; // DateTime
+    id?: string | null; // ID
     startAt: any; // DateTime!
   }
   InjuryScalarWhereInput: { // input type
@@ -864,6 +876,7 @@ export interface NexusGenInputs {
     finished?: boolean | null; // Boolean
     goals?: NexusGenInputs['GoalCreateManyWithoutMatchInput'] | null; // GoalCreateManyWithoutMatchInput
     homeTeam?: boolean | null; // Boolean
+    id?: string | null; // ID
     jornada: number; // Int!
     lineup?: NexusGenInputs['PlayerCreateManyWithoutLineupInput'] | null; // PlayerCreateManyWithoutLineupInput
     opponent?: NexusGenInputs['TeamCreateOneInput'] | null; // TeamCreateOneInput
@@ -907,6 +920,7 @@ export interface NexusGenInputs {
     finished?: boolean | null; // Boolean
     goals?: NexusGenInputs['GoalCreateManyWithoutMatchInput'] | null; // GoalCreateManyWithoutMatchInput
     homeTeam?: boolean | null; // Boolean
+    id?: string | null; // ID
     jornada: number; // Int!
     lineup?: NexusGenInputs['PlayerCreateManyWithoutLineupInput'] | null; // PlayerCreateManyWithoutLineupInput
     opponent?: NexusGenInputs['TeamCreateOneInput'] | null; // TeamCreateOneInput
@@ -926,6 +940,7 @@ export interface NexusGenInputs {
     finished?: boolean | null; // Boolean
     goals?: NexusGenInputs['GoalCreateManyWithoutMatchInput'] | null; // GoalCreateManyWithoutMatchInput
     homeTeam?: boolean | null; // Boolean
+    id?: string | null; // ID
     jornada: number; // Int!
     lineup?: NexusGenInputs['PlayerCreateManyWithoutLineupInput'] | null; // PlayerCreateManyWithoutLineupInput
     opponent?: NexusGenInputs['TeamCreateOneInput'] | null; // TeamCreateOneInput
@@ -945,6 +960,7 @@ export interface NexusGenInputs {
     finished?: boolean | null; // Boolean
     goals?: NexusGenInputs['GoalCreateManyWithoutMatchInput'] | null; // GoalCreateManyWithoutMatchInput
     homeTeam?: boolean | null; // Boolean
+    id?: string | null; // ID
     jornada: number; // Int!
     lineup?: NexusGenInputs['PlayerCreateManyWithoutLineupInput'] | null; // PlayerCreateManyWithoutLineupInput
     opponent?: NexusGenInputs['TeamCreateOneInput'] | null; // TeamCreateOneInput
@@ -964,6 +980,7 @@ export interface NexusGenInputs {
     desc?: string | null; // String
     finished?: boolean | null; // Boolean
     homeTeam?: boolean | null; // Boolean
+    id?: string | null; // ID
     jornada: number; // Int!
     lineup?: NexusGenInputs['PlayerCreateManyWithoutLineupInput'] | null; // PlayerCreateManyWithoutLineupInput
     opponent?: NexusGenInputs['TeamCreateOneInput'] | null; // TeamCreateOneInput
@@ -984,6 +1001,7 @@ export interface NexusGenInputs {
     finished?: boolean | null; // Boolean
     goals?: NexusGenInputs['GoalCreateManyWithoutMatchInput'] | null; // GoalCreateManyWithoutMatchInput
     homeTeam?: boolean | null; // Boolean
+    id?: string | null; // ID
     jornada: number; // Int!
     opponent?: NexusGenInputs['TeamCreateOneInput'] | null; // TeamCreateOneInput
     referees?: string | null; // String
@@ -1003,6 +1021,7 @@ export interface NexusGenInputs {
     finished?: boolean | null; // Boolean
     goals?: NexusGenInputs['GoalCreateManyWithoutMatchInput'] | null; // GoalCreateManyWithoutMatchInput
     homeTeam?: boolean | null; // Boolean
+    id?: string | null; // ID
     jornada: number; // Int!
     lineup?: NexusGenInputs['PlayerCreateManyWithoutLineupInput'] | null; // PlayerCreateManyWithoutLineupInput
     opponent?: NexusGenInputs['TeamCreateOneInput'] | null; // TeamCreateOneInput
@@ -1427,6 +1446,7 @@ export interface NexusGenInputs {
     dni: string; // String!
     email?: string | null; // String
     firstName: string; // String!
+    id?: string | null; // ID
     lastName?: string | null; // String
     name: string; // String!
     origin?: string | null; // String
@@ -1640,6 +1660,7 @@ export interface NexusGenInputs {
     foot?: NexusGenEnums['Foot'] | null; // Foot
     from?: NexusGenInputs['WhereFromCreateOneInput'] | null; // WhereFromCreateOneInput
     goals?: NexusGenInputs['GoalCreateManyWithoutPlayerInput'] | null; // GoalCreateManyWithoutPlayerInput
+    id?: string | null; // ID
     imgUrl?: string | null; // String
     injured?: boolean | null; // Boolean
     injury?: NexusGenInputs['InjuryCreateManyWithoutPlayerInput'] | null; // InjuryCreateManyWithoutPlayerInput
@@ -1692,6 +1713,7 @@ export interface NexusGenInputs {
     foot?: NexusGenEnums['Foot'] | null; // Foot
     from?: NexusGenInputs['WhereFromCreateOneInput'] | null; // WhereFromCreateOneInput
     goals?: NexusGenInputs['GoalCreateManyWithoutPlayerInput'] | null; // GoalCreateManyWithoutPlayerInput
+    id?: string | null; // ID
     imgUrl?: string | null; // String
     injured?: boolean | null; // Boolean
     injury?: NexusGenInputs['InjuryCreateManyWithoutPlayerInput'] | null; // InjuryCreateManyWithoutPlayerInput
@@ -1712,6 +1734,7 @@ export interface NexusGenInputs {
     foot?: NexusGenEnums['Foot'] | null; // Foot
     from?: NexusGenInputs['WhereFromCreateOneInput'] | null; // WhereFromCreateOneInput
     goals?: NexusGenInputs['GoalCreateManyWithoutPlayerInput'] | null; // GoalCreateManyWithoutPlayerInput
+    id?: string | null; // ID
     imgUrl?: string | null; // String
     injured?: boolean | null; // Boolean
     injury?: NexusGenInputs['InjuryCreateManyWithoutPlayerInput'] | null; // InjuryCreateManyWithoutPlayerInput
@@ -1732,6 +1755,7 @@ export interface NexusGenInputs {
     foot?: NexusGenEnums['Foot'] | null; // Foot
     from?: NexusGenInputs['WhereFromCreateOneInput'] | null; // WhereFromCreateOneInput
     goals?: NexusGenInputs['GoalCreateManyWithoutPlayerInput'] | null; // GoalCreateManyWithoutPlayerInput
+    id?: string | null; // ID
     imgUrl?: string | null; // String
     injured?: boolean | null; // Boolean
     injury?: NexusGenInputs['InjuryCreateManyWithoutPlayerInput'] | null; // InjuryCreateManyWithoutPlayerInput
@@ -1752,6 +1776,7 @@ export interface NexusGenInputs {
     captain?: boolean | null; // Boolean
     foot?: NexusGenEnums['Foot'] | null; // Foot
     from?: NexusGenInputs['WhereFromCreateOneInput'] | null; // WhereFromCreateOneInput
+    id?: string | null; // ID
     imgUrl?: string | null; // String
     injured?: boolean | null; // Boolean
     injury?: NexusGenInputs['InjuryCreateManyWithoutPlayerInput'] | null; // InjuryCreateManyWithoutPlayerInput
@@ -1773,6 +1798,7 @@ export interface NexusGenInputs {
     foot?: NexusGenEnums['Foot'] | null; // Foot
     from?: NexusGenInputs['WhereFromCreateOneInput'] | null; // WhereFromCreateOneInput
     goals?: NexusGenInputs['GoalCreateManyWithoutPlayerInput'] | null; // GoalCreateManyWithoutPlayerInput
+    id?: string | null; // ID
     imgUrl?: string | null; // String
     injured?: boolean | null; // Boolean
     lineup?: NexusGenInputs['MatchCreateManyWithoutLineupInput'] | null; // MatchCreateManyWithoutLineupInput
@@ -1793,6 +1819,7 @@ export interface NexusGenInputs {
     foot?: NexusGenEnums['Foot'] | null; // Foot
     from?: NexusGenInputs['WhereFromCreateOneInput'] | null; // WhereFromCreateOneInput
     goals?: NexusGenInputs['GoalCreateManyWithoutPlayerInput'] | null; // GoalCreateManyWithoutPlayerInput
+    id?: string | null; // ID
     imgUrl?: string | null; // String
     injured?: boolean | null; // Boolean
     injury?: NexusGenInputs['InjuryCreateManyWithoutPlayerInput'] | null; // InjuryCreateManyWithoutPlayerInput
@@ -1813,6 +1840,7 @@ export interface NexusGenInputs {
     foot?: NexusGenEnums['Foot'] | null; // Foot
     from?: NexusGenInputs['WhereFromCreateOneInput'] | null; // WhereFromCreateOneInput
     goals?: NexusGenInputs['GoalCreateManyWithoutPlayerInput'] | null; // GoalCreateManyWithoutPlayerInput
+    id?: string | null; // ID
     imgUrl?: string | null; // String
     injured?: boolean | null; // Boolean
     injury?: NexusGenInputs['InjuryCreateManyWithoutPlayerInput'] | null; // InjuryCreateManyWithoutPlayerInput
@@ -2299,6 +2327,7 @@ export interface NexusGenInputs {
     extraTime?: NexusGenInputs['HomeAndAwayCreateOneInput'] | null; // HomeAndAwayCreateOneInput
     fullTime: NexusGenInputs['HomeAndAwayCreateOneInput']; // HomeAndAwayCreateOneInput!
     halfTime?: NexusGenInputs['HomeAndAwayCreateOneInput'] | null; // HomeAndAwayCreateOneInput
+    id?: string | null; // ID
     penalties?: NexusGenInputs['HomeAndAwayCreateOneInput'] | null; // HomeAndAwayCreateOneInput
   }
   ScoreCreateOneInput: { // input type
@@ -2311,6 +2340,7 @@ export interface NexusGenInputs {
     penalties?: NexusGenInputs['HomeAndAwayUpdateOneInput'] | null; // HomeAndAwayUpdateOneInput
   }
   ScoreUpdateOneRequiredInput: { // input type
+    connect?: NexusGenInputs['ScoreWhereUniqueInput'] | null; // ScoreWhereUniqueInput
     create?: NexusGenInputs['ScoreCreateInput'] | null; // ScoreCreateInput
     update?: NexusGenInputs['ScoreUpdateDataInput'] | null; // ScoreUpdateDataInput
     upsert?: NexusGenInputs['ScoreUpsertNestedInput'] | null; // ScoreUpsertNestedInput
@@ -2324,10 +2354,28 @@ export interface NexusGenInputs {
     extraTime?: NexusGenInputs['HomeAndAwayWhereInput'] | null; // HomeAndAwayWhereInput
     fullTime?: NexusGenInputs['HomeAndAwayWhereInput'] | null; // HomeAndAwayWhereInput
     halfTime?: NexusGenInputs['HomeAndAwayWhereInput'] | null; // HomeAndAwayWhereInput
+    id?: string | null; // ID
+    id_contains?: string | null; // ID
+    id_ends_with?: string | null; // ID
+    id_gt?: string | null; // ID
+    id_gte?: string | null; // ID
+    id_in?: string[] | null; // [ID!]
+    id_lt?: string | null; // ID
+    id_lte?: string | null; // ID
+    id_not?: string | null; // ID
+    id_not_contains?: string | null; // ID
+    id_not_ends_with?: string | null; // ID
+    id_not_in?: string[] | null; // [ID!]
+    id_not_starts_with?: string | null; // ID
+    id_starts_with?: string | null; // ID
     penalties?: NexusGenInputs['HomeAndAwayWhereInput'] | null; // HomeAndAwayWhereInput
+  }
+  ScoreWhereUniqueInput: { // input type
+    id?: string | null; // ID
   }
   SizeCreateInput: { // input type
     clothing?: string | null; // String
+    id?: string | null; // ID
     step?: number | null; // Int
   }
   SizeCreateOneInput: { // input type
@@ -2393,6 +2441,7 @@ export interface NexusGenInputs {
   }
   StaffCreateInput: { // input type
     from?: NexusGenInputs['StaffFromCreateOneInput'] | null; // StaffFromCreateOneInput
+    id?: string | null; // ID
     imgUrl?: string | null; // String
     matches?: NexusGenInputs['MatchCreateManyWithoutStaffInput'] | null; // MatchCreateManyWithoutStaffInput
     nick: string; // String!
@@ -2411,6 +2460,7 @@ export interface NexusGenInputs {
   }
   StaffCreateWithoutMatchesInput: { // input type
     from?: NexusGenInputs['StaffFromCreateOneInput'] | null; // StaffFromCreateOneInput
+    id?: string | null; // ID
     imgUrl?: string | null; // String
     nick: string; // String!
     personalInfo?: NexusGenInputs['StaffInfoCreateOneInput'] | null; // StaffInfoCreateOneInput
@@ -2420,6 +2470,7 @@ export interface NexusGenInputs {
   }
   StaffCreateWithoutTeamInput: { // input type
     from?: NexusGenInputs['StaffFromCreateOneInput'] | null; // StaffFromCreateOneInput
+    id?: string | null; // ID
     imgUrl?: string | null; // String
     matches?: NexusGenInputs['MatchCreateManyWithoutStaffInput'] | null; // MatchCreateManyWithoutStaffInput
     nick: string; // String!
@@ -2911,6 +2962,7 @@ export interface NexusGenInputs {
     id?: string | null; // ID
   }
   SubstitutionsCreateInput: { // input type
+    id?: string | null; // ID
     min?: number | null; // Float
     playerIn: NexusGenInputs['PlayerCreateOneInput']; // PlayerCreateOneInput!
     playerOut: NexusGenInputs['PlayerCreateOneInput']; // PlayerCreateOneInput!
@@ -2920,6 +2972,20 @@ export interface NexusGenInputs {
   }
   SubstitutionsRestrictedWhereInput: { // input type
     AND?: NexusGenInputs['SubstitutionsRestrictedWhereInput'][] | null; // [SubstitutionsRestrictedWhereInput!]
+    id?: string | null; // ID
+    id_contains?: string | null; // ID
+    id_ends_with?: string | null; // ID
+    id_gt?: string | null; // ID
+    id_gte?: string | null; // ID
+    id_in?: string[] | null; // [ID!]
+    id_lt?: string | null; // ID
+    id_lte?: string | null; // ID
+    id_not?: string | null; // ID
+    id_not_contains?: string | null; // ID
+    id_not_ends_with?: string | null; // ID
+    id_not_in?: string[] | null; // [ID!]
+    id_not_starts_with?: string | null; // ID
+    id_starts_with?: string | null; // ID
     min?: number | null; // Float
     min_gt?: number | null; // Float
     min_gte?: number | null; // Float
@@ -2931,6 +2997,20 @@ export interface NexusGenInputs {
   }
   SubstitutionsScalarWhereInput: { // input type
     AND?: NexusGenInputs['SubstitutionsScalarWhereInput'][] | null; // [SubstitutionsScalarWhereInput!]
+    id?: string | null; // ID
+    id_contains?: string | null; // ID
+    id_ends_with?: string | null; // ID
+    id_gt?: string | null; // ID
+    id_gte?: string | null; // ID
+    id_in?: string[] | null; // [ID!]
+    id_lt?: string | null; // ID
+    id_lte?: string | null; // ID
+    id_not?: string | null; // ID
+    id_not_contains?: string | null; // ID
+    id_not_ends_with?: string | null; // ID
+    id_not_in?: string[] | null; // [ID!]
+    id_not_starts_with?: string | null; // ID
+    id_starts_with?: string | null; // ID
     min?: number | null; // Float
     min_gt?: number | null; // Float
     min_gte?: number | null; // Float
@@ -2942,20 +3022,51 @@ export interface NexusGenInputs {
     NOT?: NexusGenInputs['SubstitutionsScalarWhereInput'][] | null; // [SubstitutionsScalarWhereInput!]
     OR?: NexusGenInputs['SubstitutionsScalarWhereInput'][] | null; // [SubstitutionsScalarWhereInput!]
   }
+  SubstitutionsUpdateDataInput: { // input type
+    min?: number | null; // Float
+    playerIn?: NexusGenInputs['PlayerUpdateOneRequiredInput'] | null; // PlayerUpdateOneRequiredInput
+    playerOut?: NexusGenInputs['PlayerUpdateOneRequiredInput'] | null; // PlayerUpdateOneRequiredInput
+  }
   SubstitutionsUpdateManyDataInput: { // input type
     min?: number | null; // Float
   }
   SubstitutionsUpdateManyInput: { // input type
     create?: NexusGenInputs['SubstitutionsCreateInput'][] | null; // [SubstitutionsCreateInput!]
+    delete?: NexusGenInputs['SubstitutionsWhereUniqueInput'][] | null; // [SubstitutionsWhereUniqueInput!]
     deleteMany?: NexusGenInputs['SubstitutionsScalarWhereInput'][] | null; // [SubstitutionsScalarWhereInput!]
+    update?: NexusGenInputs['SubstitutionsUpdateWithWhereUniqueNestedInput'][] | null; // [SubstitutionsUpdateWithWhereUniqueNestedInput!]
     updateMany?: NexusGenInputs['SubstitutionsUpdateManyWithWhereNestedInput'][] | null; // [SubstitutionsUpdateManyWithWhereNestedInput!]
+    upsert?: NexusGenInputs['SubstitutionsUpsertWithWhereUniqueNestedInput'][] | null; // [SubstitutionsUpsertWithWhereUniqueNestedInput!]
   }
   SubstitutionsUpdateManyWithWhereNestedInput: { // input type
     data: NexusGenInputs['SubstitutionsUpdateManyDataInput']; // SubstitutionsUpdateManyDataInput!
     where: NexusGenInputs['SubstitutionsScalarWhereInput']; // SubstitutionsScalarWhereInput!
   }
+  SubstitutionsUpdateWithWhereUniqueNestedInput: { // input type
+    data: NexusGenInputs['SubstitutionsUpdateDataInput']; // SubstitutionsUpdateDataInput!
+    where: NexusGenInputs['SubstitutionsWhereUniqueInput']; // SubstitutionsWhereUniqueInput!
+  }
+  SubstitutionsUpsertWithWhereUniqueNestedInput: { // input type
+    create: NexusGenInputs['SubstitutionsCreateInput']; // SubstitutionsCreateInput!
+    update: NexusGenInputs['SubstitutionsUpdateDataInput']; // SubstitutionsUpdateDataInput!
+    where: NexusGenInputs['SubstitutionsWhereUniqueInput']; // SubstitutionsWhereUniqueInput!
+  }
   SubstitutionsWhereInput: { // input type
     AND?: NexusGenInputs['SubstitutionsWhereInput'][] | null; // [SubstitutionsWhereInput!]
+    id?: string | null; // ID
+    id_contains?: string | null; // ID
+    id_ends_with?: string | null; // ID
+    id_gt?: string | null; // ID
+    id_gte?: string | null; // ID
+    id_in?: string[] | null; // [ID!]
+    id_lt?: string | null; // ID
+    id_lte?: string | null; // ID
+    id_not?: string | null; // ID
+    id_not_contains?: string | null; // ID
+    id_not_ends_with?: string | null; // ID
+    id_not_in?: string[] | null; // [ID!]
+    id_not_starts_with?: string | null; // ID
+    id_starts_with?: string | null; // ID
     min?: number | null; // Float
     min_gt?: number | null; // Float
     min_gte?: number | null; // Float
@@ -2967,7 +3078,11 @@ export interface NexusGenInputs {
     playerIn?: NexusGenInputs['PlayerWhereInput'] | null; // PlayerWhereInput
     playerOut?: NexusGenInputs['PlayerWhereInput'] | null; // PlayerWhereInput
   }
+  SubstitutionsWhereUniqueInput: { // input type
+    id?: string | null; // ID
+  }
   TeamCreateInput: { // input type
+    id?: string | null; // ID
     logoUrl?: string | null; // String
     name: string; // String!
     players?: NexusGenInputs['PlayerCreateManyWithoutTeamInput'] | null; // PlayerCreateManyWithoutTeamInput
@@ -2986,11 +3101,13 @@ export interface NexusGenInputs {
     create?: NexusGenInputs['TeamCreateWithoutStaffInput'] | null; // TeamCreateWithoutStaffInput
   }
   TeamCreateWithoutPlayersInput: { // input type
+    id?: string | null; // ID
     logoUrl?: string | null; // String
     name: string; // String!
     staff?: NexusGenInputs['StaffCreateManyWithoutTeamInput'] | null; // StaffCreateManyWithoutTeamInput
   }
   TeamCreateWithoutStaffInput: { // input type
+    id?: string | null; // ID
     logoUrl?: string | null; // String
     name: string; // String!
     players?: NexusGenInputs['PlayerCreateManyWithoutTeamInput'] | null; // PlayerCreateManyWithoutTeamInput
@@ -3112,6 +3229,7 @@ export interface NexusGenInputs {
     address?: string | null; // String
     countruy?: string | null; // String
     extra?: boolean | null; // Boolean
+    id?: string | null; // ID
     nationality?: string | null; // String
     number?: number | null; // Int
     PC?: number | null; // Int
@@ -3439,6 +3557,7 @@ export interface NexusGenRootTypes {
     extraTime?: NexusGenRootTypes['HomeAndAway'] | null; // HomeAndAway
     fullTime: NexusGenRootTypes['HomeAndAway']; // HomeAndAway!
     halfTime?: NexusGenRootTypes['HomeAndAway'] | null; // HomeAndAway
+    id: string; // ID!
     penalties?: NexusGenRootTypes['HomeAndAway'] | null; // HomeAndAway
   }
   Size: { // root type
@@ -3482,6 +3601,7 @@ export interface NexusGenRootTypes {
     step?: number | null; // Int
   }
   Substitutions: { // root type
+    id: string; // ID!
     min?: number | null; // Float
     playerIn: NexusGenRootTypes['Player']; // Player!
     playerOut: NexusGenRootTypes['Player']; // Player!
@@ -3713,6 +3833,7 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
   ScoreUpdateOneRequiredInput: NexusGenInputs['ScoreUpdateOneRequiredInput'];
   ScoreUpsertNestedInput: NexusGenInputs['ScoreUpsertNestedInput'];
   ScoreWhereInput: NexusGenInputs['ScoreWhereInput'];
+  ScoreWhereUniqueInput: NexusGenInputs['ScoreWhereUniqueInput'];
   SizeCreateInput: NexusGenInputs['SizeCreateInput'];
   SizeCreateOneInput: NexusGenInputs['SizeCreateOneInput'];
   SizeUpdateDataInput: NexusGenInputs['SizeUpdateDataInput'];
@@ -3762,10 +3883,14 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
   SubstitutionsCreateManyInput: NexusGenInputs['SubstitutionsCreateManyInput'];
   SubstitutionsRestrictedWhereInput: NexusGenInputs['SubstitutionsRestrictedWhereInput'];
   SubstitutionsScalarWhereInput: NexusGenInputs['SubstitutionsScalarWhereInput'];
+  SubstitutionsUpdateDataInput: NexusGenInputs['SubstitutionsUpdateDataInput'];
   SubstitutionsUpdateManyDataInput: NexusGenInputs['SubstitutionsUpdateManyDataInput'];
   SubstitutionsUpdateManyInput: NexusGenInputs['SubstitutionsUpdateManyInput'];
   SubstitutionsUpdateManyWithWhereNestedInput: NexusGenInputs['SubstitutionsUpdateManyWithWhereNestedInput'];
+  SubstitutionsUpdateWithWhereUniqueNestedInput: NexusGenInputs['SubstitutionsUpdateWithWhereUniqueNestedInput'];
+  SubstitutionsUpsertWithWhereUniqueNestedInput: NexusGenInputs['SubstitutionsUpsertWithWhereUniqueNestedInput'];
   SubstitutionsWhereInput: NexusGenInputs['SubstitutionsWhereInput'];
+  SubstitutionsWhereUniqueInput: NexusGenInputs['SubstitutionsWhereUniqueInput'];
   TeamCreateInput: NexusGenInputs['TeamCreateInput'];
   TeamCreateOneInput: NexusGenInputs['TeamCreateOneInput'];
   TeamCreateOneWithoutPlayersInput: NexusGenInputs['TeamCreateOneWithoutPlayersInput'];
@@ -4074,6 +4199,7 @@ export interface NexusGenFieldTypes {
     extraTime: NexusGenRootTypes['HomeAndAway'] | null; // HomeAndAway
     fullTime: NexusGenRootTypes['HomeAndAway']; // HomeAndAway!
     halfTime: NexusGenRootTypes['HomeAndAway'] | null; // HomeAndAway
+    id: string; // ID!
     penalties: NexusGenRootTypes['HomeAndAway'] | null; // HomeAndAway
   }
   Size: { // field return type
@@ -4123,6 +4249,7 @@ export interface NexusGenFieldTypes {
     step: number | null; // Int
   }
   Substitutions: { // field return type
+    id: string; // ID!
     min: number | null; // Float
     playerIn: NexusGenRootTypes['Player']; // Player!
     playerOut: NexusGenRootTypes['Player']; // Player!
@@ -4658,7 +4785,7 @@ export interface NexusGenInheritedFields {}
 
 export type NexusGenObjectNames = "AggregateAssist" | "AggregateBooking" | "AggregateGoal" | "AggregateInjury" | "AggregateMatch" | "AggregatePlayer" | "AggregateStaff" | "AggregateTeam" | "Assessment" | "Assist" | "AssistConnection" | "AssistEdge" | "BatchPayload" | "Booking" | "BookingConnection" | "BookingEdge" | "Goal" | "GoalConnection" | "GoalEdge" | "HomeAndAway" | "Injury" | "InjuryConnection" | "InjuryEdge" | "Match" | "MatchConnection" | "MatchEdge" | "Mutation" | "PageInfo" | "PersonalInfo" | "Player" | "PlayerConnection" | "PlayerEdge" | "Query" | "Score" | "Size" | "Staff" | "StaffConnection" | "StaffEdge" | "StaffFrom" | "StaffInfo" | "StaffSize" | "Substitutions" | "Team" | "TeamConnection" | "TeamEdge" | "WhereFrom";
 
-export type NexusGenInputNames = "AssessmentCreateInput" | "AssessmentCreateOneInput" | "AssessmentUpdateDataInput" | "AssessmentUpdateOneInput" | "AssessmentUpsertNestedInput" | "AssessmentWhereInput" | "AssessmentWhereUniqueInput" | "AssistCreateInput" | "AssistCreateManyWithoutMatchInput" | "AssistCreateManyWithoutPlayerInput" | "AssistCreateWithoutMatchInput" | "AssistCreateWithoutPlayerInput" | "AssistScalarWhereInput" | "AssistUpdateInput" | "AssistUpdateManyDataInput" | "AssistUpdateManyMutationInput" | "AssistUpdateManyWithWhereNestedInput" | "AssistUpdateManyWithoutMatchInput" | "AssistUpdateManyWithoutPlayerInput" | "AssistUpdateWithWhereUniqueWithoutMatchInput" | "AssistUpdateWithWhereUniqueWithoutPlayerInput" | "AssistUpdateWithoutMatchDataInput" | "AssistUpdateWithoutPlayerDataInput" | "AssistUpsertWithWhereUniqueWithoutMatchInput" | "AssistUpsertWithWhereUniqueWithoutPlayerInput" | "AssistWhereInput" | "AssistWhereUniqueInput" | "BookingCreateInput" | "BookingCreateManyWithoutMatchInput" | "BookingCreateManyWithoutPlayerInput" | "BookingCreateWithoutMatchInput" | "BookingCreateWithoutPlayerInput" | "BookingScalarWhereInput" | "BookingUpdateInput" | "BookingUpdateManyDataInput" | "BookingUpdateManyMutationInput" | "BookingUpdateManyWithWhereNestedInput" | "BookingUpdateManyWithoutMatchInput" | "BookingUpdateManyWithoutPlayerInput" | "BookingUpdateWithWhereUniqueWithoutMatchInput" | "BookingUpdateWithWhereUniqueWithoutPlayerInput" | "BookingUpdateWithoutMatchDataInput" | "BookingUpdateWithoutPlayerDataInput" | "BookingUpsertWithWhereUniqueWithoutMatchInput" | "BookingUpsertWithWhereUniqueWithoutPlayerInput" | "BookingWhereInput" | "BookingWhereUniqueInput" | "GoalCreateInput" | "GoalCreateManyWithoutMatchInput" | "GoalCreateManyWithoutPlayerInput" | "GoalCreateWithoutMatchInput" | "GoalCreateWithoutPlayerInput" | "GoalScalarWhereInput" | "GoalUpdateInput" | "GoalUpdateManyDataInput" | "GoalUpdateManyMutationInput" | "GoalUpdateManyWithWhereNestedInput" | "GoalUpdateManyWithoutMatchInput" | "GoalUpdateManyWithoutPlayerInput" | "GoalUpdateWithWhereUniqueWithoutMatchInput" | "GoalUpdateWithWhereUniqueWithoutPlayerInput" | "GoalUpdateWithoutMatchDataInput" | "GoalUpdateWithoutPlayerDataInput" | "GoalUpsertWithWhereUniqueWithoutMatchInput" | "GoalUpsertWithWhereUniqueWithoutPlayerInput" | "GoalWhereInput" | "GoalWhereUniqueInput" | "HomeAndAwayCreateInput" | "HomeAndAwayCreateOneInput" | "HomeAndAwayUpdateDataInput" | "HomeAndAwayUpdateOneInput" | "HomeAndAwayUpdateOneRequiredInput" | "HomeAndAwayUpsertNestedInput" | "HomeAndAwayWhereInput" | "InjuryCreateInput" | "InjuryCreateManyWithoutPlayerInput" | "InjuryCreateWithoutPlayerInput" | "InjuryScalarWhereInput" | "InjuryUpdateInput" | "InjuryUpdateManyDataInput" | "InjuryUpdateManyMutationInput" | "InjuryUpdateManyWithWhereNestedInput" | "InjuryUpdateManyWithoutPlayerInput" | "InjuryUpdateWithWhereUniqueWithoutPlayerInput" | "InjuryUpdateWithoutPlayerDataInput" | "InjuryUpsertWithWhereUniqueWithoutPlayerInput" | "InjuryWhereInput" | "InjuryWhereUniqueInput" | "MatchCreateInput" | "MatchCreateManyWithoutBenchInput" | "MatchCreateManyWithoutLineupInput" | "MatchCreateManyWithoutStaffInput" | "MatchCreateOneWithoutAssistInput" | "MatchCreateOneWithoutBookingsInput" | "MatchCreateOneWithoutGoalsInput" | "MatchCreateWithoutAssistInput" | "MatchCreateWithoutBenchInput" | "MatchCreateWithoutBookingsInput" | "MatchCreateWithoutGoalsInput" | "MatchCreateWithoutLineupInput" | "MatchCreateWithoutStaffInput" | "MatchScalarWhereInput" | "MatchUpdateInput" | "MatchUpdateManyDataInput" | "MatchUpdateManyMutationInput" | "MatchUpdateManyWithWhereNestedInput" | "MatchUpdateManyWithoutBenchInput" | "MatchUpdateManyWithoutLineupInput" | "MatchUpdateManyWithoutStaffInput" | "MatchUpdateOneRequiredWithoutAssistInput" | "MatchUpdateOneRequiredWithoutBookingsInput" | "MatchUpdateOneRequiredWithoutGoalsInput" | "MatchUpdateWithWhereUniqueWithoutBenchInput" | "MatchUpdateWithWhereUniqueWithoutLineupInput" | "MatchUpdateWithWhereUniqueWithoutStaffInput" | "MatchUpdateWithoutAssistDataInput" | "MatchUpdateWithoutBenchDataInput" | "MatchUpdateWithoutBookingsDataInput" | "MatchUpdateWithoutGoalsDataInput" | "MatchUpdateWithoutLineupDataInput" | "MatchUpdateWithoutStaffDataInput" | "MatchUpsertWithWhereUniqueWithoutBenchInput" | "MatchUpsertWithWhereUniqueWithoutLineupInput" | "MatchUpsertWithWhereUniqueWithoutStaffInput" | "MatchUpsertWithoutAssistInput" | "MatchUpsertWithoutBookingsInput" | "MatchUpsertWithoutGoalsInput" | "MatchWhereInput" | "MatchWhereUniqueInput" | "PersonalInfoCreateInput" | "PersonalInfoCreateOneInput" | "PersonalInfoUpdateDataInput" | "PersonalInfoUpdateOneInput" | "PersonalInfoUpsertNestedInput" | "PersonalInfoWhereInput" | "PersonalInfoWhereUniqueInput" | "PlayerCreateInput" | "PlayerCreateManyWithoutBenchInput" | "PlayerCreateManyWithoutLineupInput" | "PlayerCreateManyWithoutTeamInput" | "PlayerCreateOneInput" | "PlayerCreateOneWithoutAssistInput" | "PlayerCreateOneWithoutBookingsInput" | "PlayerCreateOneWithoutGoalsInput" | "PlayerCreateOneWithoutInjuryInput" | "PlayerCreateWithoutAssistInput" | "PlayerCreateWithoutBenchInput" | "PlayerCreateWithoutBookingsInput" | "PlayerCreateWithoutGoalsInput" | "PlayerCreateWithoutInjuryInput" | "PlayerCreateWithoutLineupInput" | "PlayerCreateWithoutTeamInput" | "PlayerScalarWhereInput" | "PlayerUpdateDataInput" | "PlayerUpdateInput" | "PlayerUpdateManyDataInput" | "PlayerUpdateManyMutationInput" | "PlayerUpdateManyWithWhereNestedInput" | "PlayerUpdateManyWithoutBenchInput" | "PlayerUpdateManyWithoutLineupInput" | "PlayerUpdateManyWithoutTeamInput" | "PlayerUpdateOneRequiredInput" | "PlayerUpdateOneRequiredWithoutAssistInput" | "PlayerUpdateOneRequiredWithoutBookingsInput" | "PlayerUpdateOneRequiredWithoutGoalsInput" | "PlayerUpdateOneWithoutInjuryInput" | "PlayerUpdateWithWhereUniqueWithoutBenchInput" | "PlayerUpdateWithWhereUniqueWithoutLineupInput" | "PlayerUpdateWithWhereUniqueWithoutTeamInput" | "PlayerUpdateWithoutAssistDataInput" | "PlayerUpdateWithoutBenchDataInput" | "PlayerUpdateWithoutBookingsDataInput" | "PlayerUpdateWithoutGoalsDataInput" | "PlayerUpdateWithoutInjuryDataInput" | "PlayerUpdateWithoutLineupDataInput" | "PlayerUpdateWithoutTeamDataInput" | "PlayerUpsertNestedInput" | "PlayerUpsertWithWhereUniqueWithoutBenchInput" | "PlayerUpsertWithWhereUniqueWithoutLineupInput" | "PlayerUpsertWithWhereUniqueWithoutTeamInput" | "PlayerUpsertWithoutAssistInput" | "PlayerUpsertWithoutBookingsInput" | "PlayerUpsertWithoutGoalsInput" | "PlayerUpsertWithoutInjuryInput" | "PlayerWhereInput" | "PlayerWhereUniqueInput" | "ScoreCreateInput" | "ScoreCreateOneInput" | "ScoreUpdateDataInput" | "ScoreUpdateOneRequiredInput" | "ScoreUpsertNestedInput" | "ScoreWhereInput" | "SizeCreateInput" | "SizeCreateOneInput" | "SizeUpdateDataInput" | "SizeUpdateOneInput" | "SizeUpsertNestedInput" | "SizeWhereInput" | "SizeWhereUniqueInput" | "StaffCreateInput" | "StaffCreateManyWithoutMatchesInput" | "StaffCreateManyWithoutTeamInput" | "StaffCreateWithoutMatchesInput" | "StaffCreateWithoutTeamInput" | "StaffFromCreateInput" | "StaffFromCreateOneInput" | "StaffFromUpdateDataInput" | "StaffFromUpdateOneInput" | "StaffFromUpsertNestedInput" | "StaffFromWhereInput" | "StaffInfoCreateInput" | "StaffInfoCreateOneInput" | "StaffInfoUpdateDataInput" | "StaffInfoUpdateOneInput" | "StaffInfoUpsertNestedInput" | "StaffInfoWhereInput" | "StaffScalarWhereInput" | "StaffSizeCreateInput" | "StaffSizeCreateOneInput" | "StaffSizeUpdateDataInput" | "StaffSizeUpdateOneInput" | "StaffSizeUpsertNestedInput" | "StaffSizeWhereInput" | "StaffUpdateInput" | "StaffUpdateManyDataInput" | "StaffUpdateManyMutationInput" | "StaffUpdateManyWithWhereNestedInput" | "StaffUpdateManyWithoutMatchesInput" | "StaffUpdateManyWithoutTeamInput" | "StaffUpdateWithWhereUniqueWithoutMatchesInput" | "StaffUpdateWithWhereUniqueWithoutTeamInput" | "StaffUpdateWithoutMatchesDataInput" | "StaffUpdateWithoutTeamDataInput" | "StaffUpsertWithWhereUniqueWithoutMatchesInput" | "StaffUpsertWithWhereUniqueWithoutTeamInput" | "StaffWhereInput" | "StaffWhereUniqueInput" | "SubstitutionsCreateInput" | "SubstitutionsCreateManyInput" | "SubstitutionsRestrictedWhereInput" | "SubstitutionsScalarWhereInput" | "SubstitutionsUpdateManyDataInput" | "SubstitutionsUpdateManyInput" | "SubstitutionsUpdateManyWithWhereNestedInput" | "SubstitutionsWhereInput" | "TeamCreateInput" | "TeamCreateOneInput" | "TeamCreateOneWithoutPlayersInput" | "TeamCreateOneWithoutStaffInput" | "TeamCreateWithoutPlayersInput" | "TeamCreateWithoutStaffInput" | "TeamUpdateDataInput" | "TeamUpdateInput" | "TeamUpdateManyMutationInput" | "TeamUpdateOneInput" | "TeamUpdateOneWithoutPlayersInput" | "TeamUpdateOneWithoutStaffInput" | "TeamUpdateWithoutPlayersDataInput" | "TeamUpdateWithoutStaffDataInput" | "TeamUpsertNestedInput" | "TeamUpsertWithoutPlayersInput" | "TeamUpsertWithoutStaffInput" | "TeamWhereInput" | "TeamWhereUniqueInput" | "WhereFromCreateInput" | "WhereFromCreateOneInput" | "WhereFromUpdateDataInput" | "WhereFromUpdateOneInput" | "WhereFromUpsertNestedInput" | "WhereFromWhereInput" | "WhereFromWhereUniqueInput";
+export type NexusGenInputNames = "AssessmentCreateInput" | "AssessmentCreateOneInput" | "AssessmentUpdateDataInput" | "AssessmentUpdateOneInput" | "AssessmentUpsertNestedInput" | "AssessmentWhereInput" | "AssessmentWhereUniqueInput" | "AssistCreateInput" | "AssistCreateManyWithoutMatchInput" | "AssistCreateManyWithoutPlayerInput" | "AssistCreateWithoutMatchInput" | "AssistCreateWithoutPlayerInput" | "AssistScalarWhereInput" | "AssistUpdateInput" | "AssistUpdateManyDataInput" | "AssistUpdateManyMutationInput" | "AssistUpdateManyWithWhereNestedInput" | "AssistUpdateManyWithoutMatchInput" | "AssistUpdateManyWithoutPlayerInput" | "AssistUpdateWithWhereUniqueWithoutMatchInput" | "AssistUpdateWithWhereUniqueWithoutPlayerInput" | "AssistUpdateWithoutMatchDataInput" | "AssistUpdateWithoutPlayerDataInput" | "AssistUpsertWithWhereUniqueWithoutMatchInput" | "AssistUpsertWithWhereUniqueWithoutPlayerInput" | "AssistWhereInput" | "AssistWhereUniqueInput" | "BookingCreateInput" | "BookingCreateManyWithoutMatchInput" | "BookingCreateManyWithoutPlayerInput" | "BookingCreateWithoutMatchInput" | "BookingCreateWithoutPlayerInput" | "BookingScalarWhereInput" | "BookingUpdateInput" | "BookingUpdateManyDataInput" | "BookingUpdateManyMutationInput" | "BookingUpdateManyWithWhereNestedInput" | "BookingUpdateManyWithoutMatchInput" | "BookingUpdateManyWithoutPlayerInput" | "BookingUpdateWithWhereUniqueWithoutMatchInput" | "BookingUpdateWithWhereUniqueWithoutPlayerInput" | "BookingUpdateWithoutMatchDataInput" | "BookingUpdateWithoutPlayerDataInput" | "BookingUpsertWithWhereUniqueWithoutMatchInput" | "BookingUpsertWithWhereUniqueWithoutPlayerInput" | "BookingWhereInput" | "BookingWhereUniqueInput" | "GoalCreateInput" | "GoalCreateManyWithoutMatchInput" | "GoalCreateManyWithoutPlayerInput" | "GoalCreateWithoutMatchInput" | "GoalCreateWithoutPlayerInput" | "GoalScalarWhereInput" | "GoalUpdateInput" | "GoalUpdateManyDataInput" | "GoalUpdateManyMutationInput" | "GoalUpdateManyWithWhereNestedInput" | "GoalUpdateManyWithoutMatchInput" | "GoalUpdateManyWithoutPlayerInput" | "GoalUpdateWithWhereUniqueWithoutMatchInput" | "GoalUpdateWithWhereUniqueWithoutPlayerInput" | "GoalUpdateWithoutMatchDataInput" | "GoalUpdateWithoutPlayerDataInput" | "GoalUpsertWithWhereUniqueWithoutMatchInput" | "GoalUpsertWithWhereUniqueWithoutPlayerInput" | "GoalWhereInput" | "GoalWhereUniqueInput" | "HomeAndAwayCreateInput" | "HomeAndAwayCreateOneInput" | "HomeAndAwayUpdateDataInput" | "HomeAndAwayUpdateOneInput" | "HomeAndAwayUpdateOneRequiredInput" | "HomeAndAwayUpsertNestedInput" | "HomeAndAwayWhereInput" | "InjuryCreateInput" | "InjuryCreateManyWithoutPlayerInput" | "InjuryCreateWithoutPlayerInput" | "InjuryScalarWhereInput" | "InjuryUpdateInput" | "InjuryUpdateManyDataInput" | "InjuryUpdateManyMutationInput" | "InjuryUpdateManyWithWhereNestedInput" | "InjuryUpdateManyWithoutPlayerInput" | "InjuryUpdateWithWhereUniqueWithoutPlayerInput" | "InjuryUpdateWithoutPlayerDataInput" | "InjuryUpsertWithWhereUniqueWithoutPlayerInput" | "InjuryWhereInput" | "InjuryWhereUniqueInput" | "MatchCreateInput" | "MatchCreateManyWithoutBenchInput" | "MatchCreateManyWithoutLineupInput" | "MatchCreateManyWithoutStaffInput" | "MatchCreateOneWithoutAssistInput" | "MatchCreateOneWithoutBookingsInput" | "MatchCreateOneWithoutGoalsInput" | "MatchCreateWithoutAssistInput" | "MatchCreateWithoutBenchInput" | "MatchCreateWithoutBookingsInput" | "MatchCreateWithoutGoalsInput" | "MatchCreateWithoutLineupInput" | "MatchCreateWithoutStaffInput" | "MatchScalarWhereInput" | "MatchUpdateInput" | "MatchUpdateManyDataInput" | "MatchUpdateManyMutationInput" | "MatchUpdateManyWithWhereNestedInput" | "MatchUpdateManyWithoutBenchInput" | "MatchUpdateManyWithoutLineupInput" | "MatchUpdateManyWithoutStaffInput" | "MatchUpdateOneRequiredWithoutAssistInput" | "MatchUpdateOneRequiredWithoutBookingsInput" | "MatchUpdateOneRequiredWithoutGoalsInput" | "MatchUpdateWithWhereUniqueWithoutBenchInput" | "MatchUpdateWithWhereUniqueWithoutLineupInput" | "MatchUpdateWithWhereUniqueWithoutStaffInput" | "MatchUpdateWithoutAssistDataInput" | "MatchUpdateWithoutBenchDataInput" | "MatchUpdateWithoutBookingsDataInput" | "MatchUpdateWithoutGoalsDataInput" | "MatchUpdateWithoutLineupDataInput" | "MatchUpdateWithoutStaffDataInput" | "MatchUpsertWithWhereUniqueWithoutBenchInput" | "MatchUpsertWithWhereUniqueWithoutLineupInput" | "MatchUpsertWithWhereUniqueWithoutStaffInput" | "MatchUpsertWithoutAssistInput" | "MatchUpsertWithoutBookingsInput" | "MatchUpsertWithoutGoalsInput" | "MatchWhereInput" | "MatchWhereUniqueInput" | "PersonalInfoCreateInput" | "PersonalInfoCreateOneInput" | "PersonalInfoUpdateDataInput" | "PersonalInfoUpdateOneInput" | "PersonalInfoUpsertNestedInput" | "PersonalInfoWhereInput" | "PersonalInfoWhereUniqueInput" | "PlayerCreateInput" | "PlayerCreateManyWithoutBenchInput" | "PlayerCreateManyWithoutLineupInput" | "PlayerCreateManyWithoutTeamInput" | "PlayerCreateOneInput" | "PlayerCreateOneWithoutAssistInput" | "PlayerCreateOneWithoutBookingsInput" | "PlayerCreateOneWithoutGoalsInput" | "PlayerCreateOneWithoutInjuryInput" | "PlayerCreateWithoutAssistInput" | "PlayerCreateWithoutBenchInput" | "PlayerCreateWithoutBookingsInput" | "PlayerCreateWithoutGoalsInput" | "PlayerCreateWithoutInjuryInput" | "PlayerCreateWithoutLineupInput" | "PlayerCreateWithoutTeamInput" | "PlayerScalarWhereInput" | "PlayerUpdateDataInput" | "PlayerUpdateInput" | "PlayerUpdateManyDataInput" | "PlayerUpdateManyMutationInput" | "PlayerUpdateManyWithWhereNestedInput" | "PlayerUpdateManyWithoutBenchInput" | "PlayerUpdateManyWithoutLineupInput" | "PlayerUpdateManyWithoutTeamInput" | "PlayerUpdateOneRequiredInput" | "PlayerUpdateOneRequiredWithoutAssistInput" | "PlayerUpdateOneRequiredWithoutBookingsInput" | "PlayerUpdateOneRequiredWithoutGoalsInput" | "PlayerUpdateOneWithoutInjuryInput" | "PlayerUpdateWithWhereUniqueWithoutBenchInput" | "PlayerUpdateWithWhereUniqueWithoutLineupInput" | "PlayerUpdateWithWhereUniqueWithoutTeamInput" | "PlayerUpdateWithoutAssistDataInput" | "PlayerUpdateWithoutBenchDataInput" | "PlayerUpdateWithoutBookingsDataInput" | "PlayerUpdateWithoutGoalsDataInput" | "PlayerUpdateWithoutInjuryDataInput" | "PlayerUpdateWithoutLineupDataInput" | "PlayerUpdateWithoutTeamDataInput" | "PlayerUpsertNestedInput" | "PlayerUpsertWithWhereUniqueWithoutBenchInput" | "PlayerUpsertWithWhereUniqueWithoutLineupInput" | "PlayerUpsertWithWhereUniqueWithoutTeamInput" | "PlayerUpsertWithoutAssistInput" | "PlayerUpsertWithoutBookingsInput" | "PlayerUpsertWithoutGoalsInput" | "PlayerUpsertWithoutInjuryInput" | "PlayerWhereInput" | "PlayerWhereUniqueInput" | "ScoreCreateInput" | "ScoreCreateOneInput" | "ScoreUpdateDataInput" | "ScoreUpdateOneRequiredInput" | "ScoreUpsertNestedInput" | "ScoreWhereInput" | "ScoreWhereUniqueInput" | "SizeCreateInput" | "SizeCreateOneInput" | "SizeUpdateDataInput" | "SizeUpdateOneInput" | "SizeUpsertNestedInput" | "SizeWhereInput" | "SizeWhereUniqueInput" | "StaffCreateInput" | "StaffCreateManyWithoutMatchesInput" | "StaffCreateManyWithoutTeamInput" | "StaffCreateWithoutMatchesInput" | "StaffCreateWithoutTeamInput" | "StaffFromCreateInput" | "StaffFromCreateOneInput" | "StaffFromUpdateDataInput" | "StaffFromUpdateOneInput" | "StaffFromUpsertNestedInput" | "StaffFromWhereInput" | "StaffInfoCreateInput" | "StaffInfoCreateOneInput" | "StaffInfoUpdateDataInput" | "StaffInfoUpdateOneInput" | "StaffInfoUpsertNestedInput" | "StaffInfoWhereInput" | "StaffScalarWhereInput" | "StaffSizeCreateInput" | "StaffSizeCreateOneInput" | "StaffSizeUpdateDataInput" | "StaffSizeUpdateOneInput" | "StaffSizeUpsertNestedInput" | "StaffSizeWhereInput" | "StaffUpdateInput" | "StaffUpdateManyDataInput" | "StaffUpdateManyMutationInput" | "StaffUpdateManyWithWhereNestedInput" | "StaffUpdateManyWithoutMatchesInput" | "StaffUpdateManyWithoutTeamInput" | "StaffUpdateWithWhereUniqueWithoutMatchesInput" | "StaffUpdateWithWhereUniqueWithoutTeamInput" | "StaffUpdateWithoutMatchesDataInput" | "StaffUpdateWithoutTeamDataInput" | "StaffUpsertWithWhereUniqueWithoutMatchesInput" | "StaffUpsertWithWhereUniqueWithoutTeamInput" | "StaffWhereInput" | "StaffWhereUniqueInput" | "SubstitutionsCreateInput" | "SubstitutionsCreateManyInput" | "SubstitutionsRestrictedWhereInput" | "SubstitutionsScalarWhereInput" | "SubstitutionsUpdateDataInput" | "SubstitutionsUpdateManyDataInput" | "SubstitutionsUpdateManyInput" | "SubstitutionsUpdateManyWithWhereNestedInput" | "SubstitutionsUpdateWithWhereUniqueNestedInput" | "SubstitutionsUpsertWithWhereUniqueNestedInput" | "SubstitutionsWhereInput" | "SubstitutionsWhereUniqueInput" | "TeamCreateInput" | "TeamCreateOneInput" | "TeamCreateOneWithoutPlayersInput" | "TeamCreateOneWithoutStaffInput" | "TeamCreateWithoutPlayersInput" | "TeamCreateWithoutStaffInput" | "TeamUpdateDataInput" | "TeamUpdateInput" | "TeamUpdateManyMutationInput" | "TeamUpdateOneInput" | "TeamUpdateOneWithoutPlayersInput" | "TeamUpdateOneWithoutStaffInput" | "TeamUpdateWithoutPlayersDataInput" | "TeamUpdateWithoutStaffDataInput" | "TeamUpsertNestedInput" | "TeamUpsertWithoutPlayersInput" | "TeamUpsertWithoutStaffInput" | "TeamWhereInput" | "TeamWhereUniqueInput" | "WhereFromCreateInput" | "WhereFromCreateOneInput" | "WhereFromUpdateDataInput" | "WhereFromUpdateOneInput" | "WhereFromUpsertNestedInput" | "WhereFromWhereInput" | "WhereFromWhereUniqueInput";
 
 export type NexusGenEnumNames = "AssistOrderByInput" | "BookingOrderByInput" | "ColorCard" | "Competiton" | "Foot" | "GoalOrderByInput" | "InjuryOrderByInput" | "MatchOrderByInput" | "PlayerOrderByInput" | "PlayerPosition" | "StaffOrderByInput" | "TeamOrderByInput";
 

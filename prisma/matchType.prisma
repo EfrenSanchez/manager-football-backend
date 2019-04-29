@@ -21,8 +21,9 @@ type Match {
 }
 
 type Score @embedded {
+  id: ID! @id
   fullTime: HomeAndAway! @relation(name: "FullTime")
-  halfTime: HomeAndAway @relation(name: "HalfTiem")
+  halfTime: HomeAndAway @relation(name: "HalfTime")
   extraTime: HomeAndAway @relation(name: "ExtraTime")
   penalties: HomeAndAway @relation(name: "Penalties")
 }
@@ -33,6 +34,7 @@ type HomeAndAway @embedded {
 }
 
 type Substitutions @embedded {
+  id: ID! @id
   playerIn: Player! @relation(name: "PlayerIn")
   playerOut: Player! @relation(name: "PlayerOut")
   min: Float
